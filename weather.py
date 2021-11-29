@@ -1,12 +1,13 @@
 #import different libraries needed to interact with nanoleafs
 from nanoleaf import setup
 from nanoleaf import aurora
+from nanoleafapi import digital_twin, discovery, Nanoleaf
 import requests, json
 #get nanoleaf ip addresses and authentication tokens and create corresponding lists
-ipAddressList = setup.find_auroras()
+ipAddressList =  ["192.168.1.14", "192.168.1.13", "192.168.1.12", "192.168.1.10", "192.168.1.11", "192.168.1.9", "192.168.1.4", "192.168.1.5", "192.168.1.3", "192.168.1.2"]
 tokenlist=[]
 for i in ipAddressList:
-    tokenlist.apend(setup.generate_auth_token(ipAddressList[i-1]))
+    tokenlist.append(setup.generate_auth_token(ipAddressList[i-1]))
 #create nanoleaf objects for each controller
 row1= aurora.Aurora(ipAddressList[0], tokenlist[0])#ip)
 row2= aurora.Aurora(ipAddressList[1], tokenlist[1])#ip)
