@@ -10,6 +10,9 @@ ipAddressList =  ["192.168.1.14", "192.168.1.13", "192.168.1.12", "192.168.1.10"
 tokenlist=[]
 
 #create nanoleaf objects for each controller
+wallList=[]
+for i in range 10:
+    print('0')
 row1= nanoleafapi.Nanoleaf(ipAddressList[0])#ip)
 row2= nanoleafapi.Nanoleaf(ipAddressList[1])#ip)
 row3= nanoleafapi.Nanoleaf(ipAddressList[2])#ip)
@@ -21,6 +24,7 @@ row8= nanoleafapi.Nanoleaf(ipAddressList[7])#ip)
 row9= nanoleafapi.Nanoleaf(ipAddressList[8])#ip)
 row10=nanoleafapi.Nanoleaf(ipAddressList[9])#ip)
 
+#assign auth tokens to their respective rows
 row1.get_auth_token()
 row2.get_auth_token()
 row3.get_auth_token()
@@ -32,7 +36,6 @@ row8.get_auth_token()
 row9.get_auth_token()
 row10.get_auth_token()
 
-
     
 #get weather data by scraping weather api and isolate weather description from it
 api_key = "a359b2ff7cea7447b9cba4434f9b56de"
@@ -42,8 +45,11 @@ x = response.json()
 if x["cod"]!='404':
     z=x['weather']
     weather_description=z[0]["description"]
+
+
 #use to set effect use if statemetns in correspondance with the weather api and set to the correct effect
-if weather_description== "clear sky" or weather_description=="few clouds":
+#effects are created using the flow function of the nanoleafapi, after being passed the correct rgb values for each row
+if weather_description == "clear sky" or weather_description=="few clouds":
     print("sunny")
     row1.flow([(202,0,42), (255,17,0), (255,237,0)],3)
     row2.flow([(202,0,42), (255,17,0), (255,237,0)],3)
