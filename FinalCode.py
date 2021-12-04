@@ -11,8 +11,6 @@ tokenlist=[]
 
 #create nanoleaf objects for each controller
 wallList=[]
-for i in range 10:
-    print('0')
 row1= nanoleafapi.Nanoleaf(ipAddressList[0])#ip)
 row2= nanoleafapi.Nanoleaf(ipAddressList[1])#ip)
 row3= nanoleafapi.Nanoleaf(ipAddressList[2])#ip)
