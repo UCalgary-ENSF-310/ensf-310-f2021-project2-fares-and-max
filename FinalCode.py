@@ -1,7 +1,7 @@
 #import different libraries needed to interact with nanoleafs
 import nanoleafapi
 from nanoleafapi import digital_twin, discovery, Nanoleaf
-import requests, json
+import requests
 
 #get nanoleaf ip addresses and authentication tokens and create corresponding lists
 ipAddressList =  ["192.168.1.14", "192.168.1.13", "192.168.1.12", "192.168.1.10", "192.168.1.11", "192.168.1.9", "192.168.1.4", "192.168.1.5", "192.168.1.28", "192.168.1.2"]
