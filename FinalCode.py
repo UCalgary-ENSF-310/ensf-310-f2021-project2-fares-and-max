@@ -1,7 +1,5 @@
 #import different libraries needed to interact with nanoleafs
 import nanoleafapi
-#from nanoleaf import setup
-#from nanoleaf import aurora
 from nanoleafapi import digital_twin, discovery, Nanoleaf
 import requests, json
 
