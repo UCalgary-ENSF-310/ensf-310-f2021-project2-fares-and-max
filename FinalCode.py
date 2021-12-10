@@ -71,9 +71,6 @@ if weather_description== "scattered clouds" or weather_description=="broken clou
     row9.flow([(224,224,224), (160,160,160), (20,20,20)],3)
     row10.flow([(224,224,224), (160,160,160), (20,20,20)],3)
     
-
-
-    
 if weather_description== "shower rain" or weather_description=="rain" or weather_description== "thunder storm" or weather_description=="snow" or weather_description=="mist":
     print("Rainy")
     row1.flow([(0,128,255), (0,0,255), (51,153,255)],3)
