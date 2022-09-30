@@ -34,7 +34,7 @@ row10.get_auth_token()
 
     
 #get weather data by scraping weather api and isolate weather description from it
-api_key = "a359b2ff7cea7447b9cba4434f9b56de"
+api_key = "*API key here"
 url = "http://api.openweathermap.org/data/2.5/weather?appid="+ api_key +"&q=calgary"
 response = requests.get(url)
 x = response.json()
